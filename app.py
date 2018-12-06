@@ -30,17 +30,29 @@ def callback():
         abort(400)
     return 'OK'
 
+def Keyword(text):
+    KeywordDict = {"你好":"你也好啊",
+                   "你是誰":"不告訴你"}
+    for k in KeywordDict.keys():
+        if text,fond(k) != -1:
+            return [False]
+def Reply(event):
+    ktemp = KeyWord(event.message.text)
+    if ktemp[0]:
+        line_bot_api.reply_message(event.reply_token,
+            TextSendMessage(text = Ktemp[1]))
+    else:
+        line_bot_api.reply_message(event/reply_token,
+            TextSendMessage(text = event.message.text))
+
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=Reply(event.message.text))
-    line_bot_api.reply_message(event.reply_token, message)
-	
-def Reply(text):
-	if text == "瑋桓":
-	 return '就是個Bug'
-        else:
-	 return '不管怎樣偉還就是個Bug'
+    try:
+        Reply(event)
+    except Exception as e:
+        line_bot_api.reply_message(event.reply_token,
+            TextSendMessage(text=str(e)))
 	
 import os
 if __name__ == "__main__":
