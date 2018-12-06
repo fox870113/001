@@ -30,12 +30,13 @@ def callback():
         abort(400)
     return 'OK'
 
-def KeyWord(text):
-    KeyWordDict = {"你好":"你也好啊",
+def Keyword(text):
+    KeywordDict = {"你好":"你也好啊",
                    "你是誰":"不告訴你"}
-    for k in KeyWordDict.keys():
+    for k in KeywordDict.keys():
         if text,fond(k) != -1:
-            return [False]
+            return [True,KeyWordDict[K]]
+    return[False]
         
 def Reply(event):
     ktemp = KeyWord(event.message.text)
