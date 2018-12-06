@@ -42,7 +42,7 @@ def Reply(event):
     ktemp = KeyWord(event.message.text) 
     if ktemp[0]:
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text = Ktemp[1]))
+            TextSendMessage(text = ktemp[1]))
     else:
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text = event.message.text))
