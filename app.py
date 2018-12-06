@@ -34,12 +34,12 @@ def KeyWord(text):
     KeyWordDict = {"你好":"你也好啊",
                    "你是誰":"不告訴你"}
     for K in KeyWordDict.keys():
-        if text,fond(K) != -1:
+        if text.fond(K) != -1:
             return [True,KeyWordDict[K]]
     return[False]
         
 def Reply(event):
-    ktemp = KeyWord(event.message.text)
+    ktemp = KeyWord(event.message.text) 
     if ktemp[0]:
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text = Ktemp[1]))
