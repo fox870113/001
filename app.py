@@ -33,9 +33,9 @@ def callback():
 def KeyWord(text):
     KeyWordDict = {"你好":"你也好啊",
                    "你是誰":"不告訴你"}
-    for K in KeyWordDict.keys():
-        if text.fond(K) != -1:
-            return [True,KeyWordDict[K]]
+    for k in KeyWordDict.keys():
+        if text.find(k) != -1:
+            return [True,KeyWordDict[k]]
     return[False]
         
 def Reply(event):
