@@ -30,11 +30,11 @@ def callback():
         abort(400)
     return 'OK'
 
-def Keyword(text):
-    KeywordDict = {"你好":"你也好啊",
+def KeyWord(text):
+    KeyWordDict = {"你好":"你也好啊",
                    "你是誰":"不告訴你"}
-    for k in KeywordDict.keys():
-        if text,fond(k) != -1:
+    for K in KeyWordDict.keys():
+        if text,fond(K) != -1:
             return [True,KeyWordDict[K]]
     return[False]
         
