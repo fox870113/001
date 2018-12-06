@@ -39,7 +39,7 @@ def handle_message(event):
 def Reply(text):
 	if text == "瑋桓":
 	 return '就是個Bug'
-        else
+        else:
 	 return'不管怎樣偉還就是個Bug'
 	
 import os
