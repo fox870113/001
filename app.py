@@ -40,7 +40,7 @@ def Reply(text):
 	if text == "瑋桓":
 	 return '就是個Bug'
         else:
-	 return'不管怎樣偉還就是個Bug'
+	 return '不管怎樣偉還就是個Bug'
 	
 import os
 if __name__ == "__main__":
