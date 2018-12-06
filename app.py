@@ -36,6 +36,7 @@ def Keyword(text):
     for k in KeywordDict.keys():
         if text,fond(k) != -1:
             return [False]
+        
 def Reply(event):
     ktemp = KeyWord(event.message.text)
     if ktemp[0]:
